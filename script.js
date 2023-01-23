@@ -1,4 +1,6 @@
 let cells = document.querySelectorAll('#field td');
+let value = document.querySelector('#value');
+let winner = document.querySelector('#winner');
 console.log(cells);
 
 let i = 0;
@@ -14,7 +16,8 @@ function start(cells) {
             i++;
             this.removeEventListener('click', step);
             if (isWinner(cells) == true) {
-                alert(`Победитель ${this.textContent}`);
+                winner.style.display = 'flex';
+                value.textContent = this.textContent;
             };
         })
     }
